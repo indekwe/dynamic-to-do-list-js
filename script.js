@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function (event){
             removeButton.classList.add='remove-btn'
             removeButton.onclick=()=>{
             taskList.removeChild(li)
+            //removing task from local storage
             const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
             const indexToRemove=storedTasks.findIndex(task=>task===li.textContent);
             storedTasks.splice(indexToRemove,1);
